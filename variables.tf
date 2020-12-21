@@ -1,12 +1,11 @@
 variable "do_token" {
-    description = "Your Digital Ocean API Token"
+    type = string
     default = "$do_token"
-  
 }
 
 variable "ssh_fingerprint" {
-  description = "Your SSH key fingerprint"
-  default     = "$ssh_fingerprint"
+  type = string
+  default = "$ssh_fingerprint"
 }
 
 variable "pub_key" {

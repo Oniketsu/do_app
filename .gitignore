@@ -2,3 +2,4 @@ keys/*
 terraform.tfstate*
 .terraform
 *.zip
+setup_tf_vars.sh

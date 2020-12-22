@@ -1,6 +1,6 @@
 # Create a new Web Droplet in the nyc1 region
 resource "digitalocean_droplet" "web2" {
-  image  = "ubuntu-18-04-x64"
+  image  = "docker-20-04"
   name   = "web2"
   region = "nyc1"
   size   = "s-1vcpu-1gb"
@@ -17,7 +17,6 @@ resource "digitalocean_droplet" "web2" {
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get -y update",
-      "sudo apt-get -y install docker",
       "sudo docker pull oniketsu/flaskapp:latest",
       "sudo docker run -dit --name web-site -p 80:5000 --restart always oniketsu/flaskapp:latest"
     ]

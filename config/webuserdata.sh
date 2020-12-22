@@ -2,5 +2,5 @@
 
 apt-get -y update
 apt-get -y install docker
-docker pull oniketsu/
-docker run -dit --name web-site -p 80:80 --restart always oniketsu/
+docker pull oniketsu/flaskapp:latest
+docker run -dit --name web-site -p 80:5000 --restart always oniketsu/flaskapp:latest

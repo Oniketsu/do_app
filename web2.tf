@@ -14,4 +14,12 @@ resource "digitalocean_droplet" "web2" {
       timeout = "2m"
       host = digitalocean_droplet.web2.ipv4_address
   }
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get -y update",
+      "sudo apt-get -y install docker",
+      "sudo docker pull oniketsu/flaskapp:latest",
+      "sudo docker run -dit --name web-site -p 80:5000 --restart always oniketsu/flaskapp:latest"
+    ]
+  }
 }
